@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2: Text & Headings</title>
+  <link rel="stylesheet" href="style/lesson-2.css">
+  <style>
+    /* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+/* Hover means mouse over */
+.card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* ===== Layout ===== */
+.lesson {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+
+/* ===== Header ===== */
+.lesson-header {
+  margin-bottom: 40px;
+}
+
+.lesson-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.lesson-intro {
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.card h3 {
+  margin-top: 28px;
+  font-size: 1.15rem;
+}
+
+/* ===== Text ===== */
+p {
+  margin: 14px 0;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+strong {
+  color: #111827;
+}
+
+/* ===== Code ===== */
+pre {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 18px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin: 18px 0;
+}
+
+code {
+  font-family: "JetBrains Mono", Consolas, monospace;
+}
+
+p code,
+li code,
+h3 code {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* ===== Callouts ===== */
+.callout {
+  background: #eef2ff;
+  border-left: 6px solid #6366f1;
+}
+
+.callout h2 {
+  color: #3730a3;
+}
+
+/* ===== Blockquotes ===== */
+blockquote {
+  margin: 16px 0;
+  padding: 14px 18px;
+  background: #f1f5f9;
+  border-left: 4px solid #94a3b8;
+  border-radius: 8px;
+  font-style: italic;
+  color: #334155;
+}
+
+/* ===== Dividers ===== */
+hr {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 40px 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .lesson-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <main class="lesson">
+
+    <header class="lesson-header">
+      <h1>Lesson 2: Text & Headings — the building blocks of content</h1>
+      <p class="lesson-intro">Let’s go 😄</p>
+    </header>
+
+    <!-- Headings (Very Important) -->
+    <section class="card">
+
+      <h2>🧱 Headings (Very Important)</h2>
+      <p>HTML has 6 heading levels:</p>
+      <pre>
+&lt;h1&gt;This is H1&lt;/h1&gt;
+&lt;h2&gt;This is H2&lt;/h2&gt;
+&lt;h3&gt;This is H3&lt;/h3&gt;
+&lt;h4&gt;This is H4&lt;/h4&gt;
+&lt;h5&gt;This is H5&lt;/h5&gt;
+&lt;h6&gt;This is H6&lt;/h6&gt;</pre>
+
+      <h3>🧠 Rules for headings</h3>
+
+      <ul>
+        <li>&lt;h1&gt; = most important heading</li>
+        <li>Use only one &lt;h1&gt; per page (best practice)</li>
+        <li>Headings are for structure, not just size</li>
+      </ul>
+
+      <p>❌ Don’t do this:</p>
+      <pre>
+&lt;h1&gt;Big text&lt;/h1&gt;
+&lt;h2&gt;Slightly smaller&lt;/h2&gt;
+&lt;h3&gt;Just styling&lt;/h3&gt;</pre>
+
+      <p>✅ Do this:</p>
+      <pre>
+&lt;h1&gt;My Website&lt;/h1&gt;
+&lt;h2&gt;About Me&lt;/h2&gt;
+&lt;h2&gt;Projects&lt;/h2&gt;
+&lt;h3&gt;Project 1&lt;/h3&gt;</pre>
+
+    </section>
+
+    <!-- Paragraphs -->
+    <section class="card">
+      <h2>📝 Paragraphs</h2>
+      <p>Paragraphs use &lt;p&gt;:</p>
+      <pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;</pre>
+
+      <p>💡 Browsers automatically add space between paragraphs.</p>
+
+      <p>❌ This does NOT work as you expect:</p>
+      <pre>
+&lt;p&gt;Line one
+Line two&lt;/p&gt;</pre>
+      <p>HTML ignores extra spaces and new lines.</p>
+      <hr>
+      <h3>🔽 Line Breaks</h3>
+      <p>Use &lt;br&gt; for a line break:</p>
+      <pre>
+&lt;p&gt;
+Hello&lt;br&gt;
+How are you?
+&lt;/p&gt;</pre>
+      <p>&lt;br&gt; is a self-closing tag (no &lt;/br&gt;).</p>
+      <hr>
+      <h3>✨ Text Formatting Tags</h3>
+
+      <p><strong>Bold:</strong></p>
+      <pre>&lt;b&gt;Bold text&lt;/b&gt;
+&lt;strong&gt;Important text&lt;/strong&gt;</pre>
+      <p>👉 Use &lt;strong&gt; when the text is important, not just bold.</p>
+      <hr>
+
+      <p><strong>Italic:</strong></p>
+      <pre>&lt;i&gt;Italic text&lt;/i&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;</pre>
+      <p>👉 Prefer &lt;em&gt; for meaning, not just looks.</p>
+      <hr>
+      <p><strong>Underline:</strong></p>
+      <pre>&lt;u&gt;Underlined text&lt;/u&gt;</pre>
+      <p>(Used less often; styling is usually done with CSS.)</p>
+
+    </section>
+
+    <!-- Practice Time (Do This) -->
+    <section class="card">
+      <h2>🧪 Practice Time (Do This)</h2>
+      <p>Update your index.html body like this:</p>
+      <pre>
+&lt;body&gt;
+  &lt;h1&gt;My Personal Page&lt;/h1&gt;
+
+  &lt;h2&gt;About Me&lt;/h2&gt;
+  &lt;p&gt;
+    Hello! My name is ___.
+    &lt;br&gt;
+    I am learning HTML.
+  &lt;/p&gt;
+
+  &lt;h2&gt;Why I’m Learning Web Development&lt;/h2&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Web development&lt;/strong&gt; lets me build things for the internet.
+    &lt;em&gt;I want to become a full-stack developer.&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/body&gt;</pre>
+      <p>(Open it in your browser and see what changes.)</p>
+    </section>
+
+    <!-- Important Concept (Beginner Mistake Alert -->
+    <section class="card callout">
+      <h2>🧠 Important Concept (Beginner Mistake Alert 🚨)</h2>
+      <p>HTML is about meaning, not appearance.</p>
+      <ul>
+        <li>&lt;h1&gt; means “main heading”</li>
+        <li>&lt;p&gt; means “paragraph”</li>
+        <li>&lt;strong&gt; means “important”</li>
+      </ul>
+      <p>CSS will handle colors, fonts, sizes later.</p>
+
+    </section>
+
+  <!-- Mini Challenge -->
+    <section class="card callout">
+      <h2>🎯 Mini Challenge</h2>
+    <p>Create a page with:</p>
+    <ul>
+      <li>One <code>&lt;h1&gt;</code></li>
+      <li>Two <code>&lt;h2&gt;</code> sections</li>
+      <li>At least 3 paragraphs</li>
+      <li>Use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;br&gt;</code> at least once</li>
+    </ul>
+   
+    <p>Next up 👉 Links (&lt;a&gt;) and Images (&lt;img&gt;) 🌍🖼️</p>
+    </section>
+  </main>
+</body>
+
+</html>

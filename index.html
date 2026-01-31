@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Basics – From Absolute Zero</title>
+    <link rel="stylesheet" href="style/lesson-1.css">
+    <style>
+        /* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+/* Hover means mouse over */
+.card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== Layout ===== */
+.lesson {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+
+/* ===== Header ===== */
+.lesson-header {
+  margin-bottom: 40px;
+}
+
+.lesson-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.lesson-intro {
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.card h3 {
+  margin-top: 28px;
+  font-size: 1.15rem;
+}
+
+/* ===== Text ===== */
+p {
+  margin: 14px 0;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+strong {
+  color: #111827;
+}
+
+/* ===== Code ===== */
+pre {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 18px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin: 18px 0;
+}
+
+code {
+  font-family: "JetBrains Mono", Consolas, monospace;
+}
+
+p code,
+li code,
+h3 code {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* ===== Callouts ===== */
+.callout {
+  background: #eef2ff;
+  border-left: 6px solid #6366f1;
+}
+
+.callout h2 {
+  color: #3730a3;
+}
+
+/* ===== Blockquotes ===== */
+blockquote {
+  margin: 16px 0;
+  padding: 14px 18px;
+  background: #f1f5f9;
+  border-left: 4px solid #94a3b8;
+  border-radius: 8px;
+  font-style: italic;
+  color: #334155;
+}
+
+/* ===== Dividers ===== */
+hr {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 40px 0;
+}
+/* CSS Fancy Link - Gradient underline on hover */
+
+a{
+  text-align: center;
+}
+
+/* .fancy-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+
+.fancy-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -5px;
+  background: linear-gradient(90deg, #ff0055, #ffdd00);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.fancy-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+} */
+
+/* Fancy Link - Neon glowing link */
+
+/* .fancy-link {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  transition: text-shadow 0.3s ease;
+}
+
+.fancy-link:hover {
+  text-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 30px #0ff,
+    0 0 40px #0ff;
+} */
+
+/* Fancy Link - Background highlight animation */
+
+.fancy-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  background: linear-gradient(90deg, #ff0055, #ffdd00);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease;
+}
+
+.fancy-link:hover {
+  background-position: left bottom;
+  color: #000;
+}
+
+
+/* Fancy Link - Underline bounce effect */
+/* .fancy-link {
+  text-decoration: none;
+  color: #ff0055;
+  font-weight: bold;
+  position: relative;
+}
+
+.fancy-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #ff0055;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right;
+}
+
+.fancy-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+} */
+
+.scroll-bottom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 14px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .lesson-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <main class="lesson">
+
+        <header class="lesson-header">
+            <h1>HTML Basics — From Absolute Zero</h1>
+            <p class="lesson-intro">
+                Perfect. Let’s start properly—slow, clear, and from <strong>absolute zero</strong>.
+                No rush. No assumptions. Just solid foundations. 🧱
+            </p>
+        </header>
+
+        <!-- What is HTML -->
+        <section class="card">
+            <h2>🧠 What is HTML?</h2>
+            <p><strong>HTML</strong> stands for <strong>HyperText Markup Language</strong>.</p>
+            <ul>
+                <li>It is <strong>NOT</strong> a programming language</li>
+                <li>It is a <strong>markup language</strong></li>
+                <li>It tells the browser <strong>what content is</strong> and <strong>how it’s structured</strong></li>
+            </ul>
+            <p>Think of a website like a human body:</p>
+            <ul>
+                <li><strong>HTML</strong> → skeleton (structure)</li>
+                <li><strong>CSS</strong> → clothes (style)</li>
+                <li><strong>JavaScript</strong> → brain (behavior)</li>
+            </ul>
+            <p>Right now, we’re building the <strong>skeleton</strong>.</p>
+        </section>
+
+        <!-- What does HTML do -->
+        <section class="card">
+            <h2>🧩 What does HTML do?</h2>
+            <p>HTML answers questions like:</p>
+            <ul>
+                <li>This is a <strong>heading</strong></li>
+                <li>This is a <strong>paragraph</strong></li>
+                <li>This is an <strong>image</strong></li>
+                <li>This is a <strong>link</strong></li>
+            </ul>
+            <p>Browsers (Chrome, Firefox, etc.) read HTML and display it as a webpage.</p>
+        </section>
+
+        <!-- What is a tag -->
+        <section class="card">
+            <h2>🏷️ What is an HTML tag?</h2>
+            <p>HTML uses <strong>tags</strong>.</p>
+            <p>Example:</p>
+            <pre><code>&lt;p&gt;Hello World&lt;/p&gt;</code></pre>
+            <ul>
+                <li><code>&lt;p&gt;</code> → opening tag</li>
+                <li><code>&lt;/p&gt;</code> → closing tag</li>
+                <li><code>Hello World</code> → content</li>
+            </ul>
+            <p>This tells the browser:</p>
+            <blockquote>“This text is a paragraph.”</blockquote>
+        </section>
+
+        <!-- First HTML page -->
+        <section class="card">
+            <h2>🧱 Your First HTML Page</h2>
+            <p>Every HTML page has a basic structure. <br>
+                Here is a complete, correct, real HTML page:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            <p>Don’t memorize yet. Let’s <strong>understand</strong> it.</p>
+        </section>
+
+        <!-- Line-by-Line Explanation -->
+        <section class="card callout">
+            <h2>🔍 Line-by-Line Explanation</h2>
+
+            <h3>1️⃣ <code>&lt;!DOCTYPE html&gt;</code></h3>
+            <p>Tells the browser:</p>
+            <blockquote>“Hey, this is an HTML5 document.”</blockquote>
+
+            <h3>2️⃣ <code>&lt;html&gt;...&lt;/html&gt;</code></h3>
+            <p>This wraps <strong>everything</strong> on the page. It’s the root of the document.</p>
+
+            <h3>3️⃣ <code>&lt;head&gt;...&lt;/head&gt;</code></h3>
+            <p>This is <strong>invisible stuff</strong>:</p>
+            <ul>
+                <li>Page title</li>
+                <li>Meta info</li>
+                <li>CSS links (later)</li>
+            </ul>
+            <p>Users don’t see this directly.</p>
+
+            <h3>4️⃣ <code>&lt;title&gt;My First Page&lt;/title&gt;</code></h3>
+            <p>This shows:</p>
+            <ul>
+                <li>In the <strong>browser tab</strong></li>
+                <li><strong>NOT</strong> on the page itself</li>
+            </ul>
+
+            <h3>5️⃣ <code>&lt;body&gt;...&lt;/body&gt;</code></h3>
+            <p>Everything inside here <strong>shows on the page</strong>.</p>
+
+            <h3>6️⃣ <code>&lt;h1&gt;</code></h3>
+            <p>A <strong>main heading</strong> (big and important). There are <code>h1</code> to <code>h6</code> (big →
+                small).</p>
+
+            <h3>7️⃣ <code>&lt;p&gt;</code></h3>
+            <p>A paragraph of text.</p>
+        </section>
+
+        <!-- Try This Yourself -->
+        <section class="card callout">
+            <h2>🧪 Try This Yourself (IMPORTANT)</h2>
+            <ol>
+                <li>Open <strong>Notepad</strong> (Windows) or <strong>TextEdit</strong> (Mac → plain text)</li>
+                <li>Paste the code above</li>
+                <li>Save the file as: <code>index.html</code></li>
+                <li>Double-click it</li>
+                <li>It opens in your browser 🎉</li>
+            </ol>
+            <p>You just made a website.</p>
+        </section>
+
+        <!-- Key Rules -->
+        <section class="card callout">
+            <h2>🧠 Key Rules (Remember These)</h2>
+            <ul>
+                <li>Tags usually come in <strong>pairs</strong></li>
+                <li>HTML is <strong>case-insensitive</strong>, but we write lowercase</li>
+                <li>Indentation (spaces) is for <strong>humans</strong>, not browsers</li>
+            </ul>
+        </section>
+
+        <!-- Mini Task -->
+        <section class="card callout">
+            <h2>🎯 Your First Mini Task</h2>
+            <ol>
+                <li>Change the title text</li>
+                <li>Change the heading text</li>
+                <li>Add <strong>another paragraph</strong></li>
+            </ol>
+
+            <p>Next lesson 👉 <strong>text elements + headings properly</strong></p>
+        </section>
+
+        <a href="lesson-2-text-and-headings.html" class="fancy-link">Lesson 2: Text & Headings</a>
+        
+        <!-- Floating “go to bottom” button (modern UX) -->
+        <SECtion>
+            <button class="scroll-bottom" onclick="scrollToBottom()">⬇</button>
+        <script>
+            function scrollToBottom() {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
+        </script>
+        </SECtion>
+
+    </main>
+
+</body>
+
+</html>
