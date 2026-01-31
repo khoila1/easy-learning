@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>HTML Basics – From Absolute Zero</title>
-  <link rel="stylesheet" href="style/lesson-1.css">
-  <style>
-    /* ===== Reset ===== */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Links & Images</title>
+    <style>
+         /* ===== Reset ===== */
     * {
       box-sizing: border-box;
     }
@@ -319,164 +319,138 @@
         /* Larger icon on mobile */
       }
     }
-  </style>
+    </style>
 </head>
 
 <body>
 
-  <main class="lesson">
+    <main class="lesson">
+        <header class="lesson-header">
+            <h1>Lesson 3: Links & Images (now your page starts to feel like a real website)</h1>
+            <p class="lesson-intro">Nice—momentum unlocked 🔥</p>
+        </header>
 
-    <header class="lesson-header">
-      <h1>HTML Basics — From Absolute Zero</h1>
-      <p class="lesson-intro">
-        Perfect. Let’s start properly—slow, clear, and from <strong>absolute zero</strong>.
-        No rush. No assumptions. Just solid foundations. 🧱
-      </p>
-    </header>
+        <section class="card">
+            <h2>🔗 Links (Anchor Tag)</h2>
+            <p>Links let users <strong>move between pages or websites.</strong></p>
 
-    <!-- What is HTML -->
-    <section class="card">
-      <h2>🧠 What is HTML?</h2>
-      <p><strong>HTML</strong> stands for <strong>HyperText Markup Language</strong>.</p>
-      <ul>
-        <li>It is <strong>NOT</strong> a programming language</li>
-        <li>It is a <strong>markup language</strong></li>
-        <li>It tells the browser <strong>what content is</strong> and <strong>how it’s structured</strong></li>
-      </ul>
-      <p>Think of a website like a human body:</p>
-      <ul>
-        <li><strong>HTML</strong> → skeleton (structure)</li>
-        <li><strong>CSS</strong> → clothes (style)</li>
-        <li><strong>JavaScript</strong> → brain (behavior)</li>
-      </ul>
-      <p>Right now, we’re building the <strong>skeleton</strong>.</p>
-    </section>
+            <h3>Basic link syntax</h3>
+            <pre><code>&lt;a href="https://www.google.com"&gt;Go to Google&lt;/a&gt;</code></pre>
 
-    <!-- What does HTML do -->
-    <section class="card">
-      <h2>🧩 What does HTML do?</h2>
-      <p>HTML answers questions like:</p>
-      <ul>
-        <li>This is a <strong>heading</strong></li>
-        <li>This is a <strong>paragraph</strong></li>
-        <li>This is an <strong>image</strong></li>
-        <li>This is a <strong>link</strong></li>
-      </ul>
-      <p>Browsers (Chrome, Firefox, etc.) read HTML and display it as a webpage.</p>
-    </section>
+            <h4>Breakdown</h4>
+            <ul>
+                <li><code>&lt;a&gt;</code> = anchor tag</li>
+                <li><code>href</code> = destination (URL)</li>
+                <li>Text between tags = clickable text</li>
+            </ul>
 
-    <!-- What is a tag -->
-    <section class="card">
-      <h2>🏷️ What is an HTML tag?</h2>
-      <p>HTML uses <strong>tags</strong>.</p>
-      <p>Example:</p>
-      <pre><code>&lt;p&gt;Hello World&lt;/p&gt;</code></pre>
-      <ul>
-        <li><code>&lt;p&gt;</code> → opening tag</li>
-        <li><code>&lt;/p&gt;</code> → closing tag</li>
-        <li><code>Hello World</code> → content</li>
-      </ul>
-      <p>This tells the browser:</p>
-      <blockquote>“This text is a paragraph.”</blockquote>
-    </section>
+            <hr>
 
-    <!-- First HTML page -->
-    <section class="card">
-      <h2>🧱 Your First HTML Page</h2>
-      <p>Every HTML page has a basic structure. <br>
-        Here is a complete, correct, real HTML page:</p>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;My First Page&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Hello, World!&lt;/h1&gt;
-    &lt;p&gt;This is my first HTML page.&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-      <p>Don’t memorize yet. Let’s <strong>understand</strong> it.</p>
-    </section>
+            <h3>📄 Link to another page (local file)</h3>
+            <p>If you have another file like <code>about.html</code>:</p>
+            <pre><code>&lt;a href="about.html"&gt;About Me&lt;/a&gt;</code></pre>
+            <p>Both files must be in the <strong>same folder</strong>.</p>
 
-    <!-- Line-by-Line Explanation -->
-    <section class="card callout">
-      <h2>🔍 Line-by-Line Explanation</h2>
+            <hr>
 
-      <h3>1️⃣ <code>&lt;!DOCTYPE html&gt;</code></h3>
-      <p>Tells the browser:</p>
-      <blockquote>“Hey, this is an HTML5 document.”</blockquote>
+            <h3>🆕 Open link in new tab</h3>
+            <pre><code>&lt;a href="https://www.youtube.com" target="_blank"&gt;Visit YouTube&lt;/a&gt;</code></pre>
+        </section>
 
-      <h3>2️⃣ <code>&lt;html&gt;...&lt;/html&gt;</code></h3>
-      <p>This wraps <strong>everything</strong> on the page. It’s the root of the document.</p>
+        <section class="card">
+            <h2>🖼️ Images (<code>&lt;img&gt;</code> tag)</h2>
+            <p>Images are self-closing (no <code>&lt;img&gt;</code>).</p>
 
-      <h3>3️⃣ <code>&lt;head&gt;...&lt;/head&gt;</code></h3>
-      <p>This is <strong>invisible stuff</strong>:</p>
-      <ul>
-        <li>Page title</li>
-        <li>Meta info</li>
-        <li>CSS links (later)</li>
-      </ul>
-      <p>Users don’t see this directly.</p>
+            <h3>Basic image</h3>
+            <pre><code>&lt;img src="photo.jpg" alt="My photo"&gt;</code></pre>
 
-      <h3>4️⃣ <code>&lt;title&gt;My First Page&lt;/title&gt;</code></h3>
-      <p>This shows:</p>
-      <ul>
-        <li>In the <strong>browser tab</strong></li>
-        <li><strong>NOT</strong> on the page itself</li>
-      </ul>
+            <h4>Breakdown</h4>
+            <ul>
+                <li><code>src</code> = image file path</li>
+                <li><code>alt</code> = text shown if image fails + accessibility</li>
+            </ul>
+            <p><span class="note">⚠️ <code>alt</code> is not optional. Get used to it.</span></p>
 
-      <h3>5️⃣ <code>&lt;body&gt;...&lt;/body&gt;</code></h3>
-      <p>Everything inside here <strong>shows on the page</strong>.</p>
+            <hr>
 
-      <h3>6️⃣ <code>&lt;h1&gt;</code></h3>
-      <p>A <strong>main heading</strong> (big and important). There are <code>h1</code> to <code>h6</code> (big →
-        small).</p>
+            <h3>🌐 Image from the internet</h3>
+            <pre><code>&lt;img src="https://via.placeholder.com/150" alt="Placeholder image"&gt;</code></pre>
 
-      <h3>7️⃣ <code>&lt;p&gt;</code></h3>
-      <p>A paragraph of text.</p>
-    </section>
+            <hr>
 
-    <!-- Try This Yourself -->
-    <section class="card callout">
-      <h2>🧪 Try This Yourself (IMPORTANT)</h2>
-      <ol>
-        <li>Open <strong>Notepad</strong> (Windows) or <strong>TextEdit</strong> (Mac → plain text)</li>
-        <li>Paste the code above</li>
-        <li>Save the file as: <code>index.html</code></li>
-        <li>Double-click it</li>
-        <li>It opens in your browser 🎉</li>
-      </ol>
-      <p>You just made a website.</p>
-    </section>
+            <h3>📁 Image from your computer</h3>
+            <p>Folder structure:</p>
+            <pre><code>project/
+├── index.html
+└── images/
+    └── logo.png</code></pre>
 
-    <!-- Key Rules -->
-    <section class="card callout">
-      <h2>🧠 Key Rules (Remember These)</h2>
-      <ul>
-        <li>Tags usually come in <strong>pairs</strong></li>
-        <li>HTML is <strong>case-insensitive</strong>, but we write lowercase</li>
-        <li>Indentation (spaces) is for <strong>humans</strong>, not browsers</li>
-      </ul>
-    </section>
+            <h4>HTML:</h4>
+            <pre><code>&lt;img src="images/logo.png" alt="Website logo"&gt;</code></pre>
 
-    <!-- Mini Task -->
-    <section class="card callout">
-      <h2>🎯 Your First Mini Task</h2>
-      <ol>
-        <li>Change the title text</li>
-        <li>Change the heading text</li>
-        <li>Add <strong>another paragraph</strong></li>
-      </ol>
+            <hr>
 
-      <p>Next lesson 👉 <strong>text elements + headings properly</strong></p>
-    </section>
+            <h3>🧠 Common Beginner Mistakes</h3>
+            
+                ❌ Forgetting file extension:
+                <pre><code>&lt;img src="photo"&gt;</code></pre>
+                ❌ Wrong folder path:
+                <pre><code>&lt;img src="/images/logo.png"&gt;</code></pre>
+            <p>(We’ll explain paths deeply later.)</p>
+        </section>
 
-    <a href="lesson-2-text-and-headings.html" class="fancy-link">Lesson 2: Text & Headings</a>
+        <section class="card">
+            <h2>🔗 Image as a link (very common)</h2>
+            <pre><code>&lt;a href="https://www.google.com"&gt;
+  &lt;img src="images/logo.png" alt="Google logo"&gt;
+&lt;/a&gt;</code></pre>
+        </section>
 
-    <!-- Floating “go to bottom” button (modern UX) -->
-    <!-- <SECtion>
-            <button class="scroll-bottom" onclick="scrollToBottom()">⬇</button>
+        <section class="card">
+            <h2>🧪 Practice Task (Do This)</h2>
+            <p>Update your page:</p>
+            <pre><code>&lt;body&gt;
+  &lt;h1&gt;My Personal Page&lt;/h1&gt;
+
+  &lt;p&gt;
+    Visit my favorite website:
+    &lt;a href="https://www.wikipedia.org" target="_blank"&gt;
+      Wikipedia
+    &lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;img
+    src="https://via.placeholder.com/200"
+    alt="Sample image"
+  &gt;
+&lt;/body&gt;</code></pre>
+            <p>Open it in the browser and click everything.</p>
+        </section>
+
+        <section class="card">
+            <h2>🎯 Mini Challenge</h2>
+            <ol>
+                <li>Add <strong>2 links</strong></li>
+                <ul>
+                    <li>One external (Google, YouTube, etc.)</li>
+                    <li>One fake local link (like contact.html)</li>
+                </ul>
+                <li>Add 1 image</li>
+                <li>Add an image inside a link</li>
+            </ol>
+        </section>
+
+        <footer>
+            <p>Next up 👉 <strong>Lists (ul, ol) + Comments + HTML structure best practices 📋</strong></p>
+        </footer>
+
+        <!-- link to the next lesson -->
+        <!-- <a href="lesson-2-text-and-headings.html" class="fancy-link">Lesson 2: Text & Headings</a> -->
+
+        <!-- Floating "Go to Bottom" Button -->
+        <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
+        </button>
+
         <script>
             function scrollToBottom() {
                 window.scrollTo({
@@ -485,21 +459,7 @@
                 });
             }
         </script>
-        </SECtion> -->
-    <!-- Floating "Go to Bottom" Button -->
-    <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
-    </button>
-
-    <script>
-      function scrollToBottom() {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth"
-        });
-      }
-    </script>
-
-  </main>
+    </main>
 
 </body>
 
