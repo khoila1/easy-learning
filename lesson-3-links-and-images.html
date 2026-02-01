@@ -245,50 +245,67 @@
     } */
 
 
-        /* Floating "Go to Bottom" Button */
+        /* Shared button styles */
+        .scroll-top,
         .scroll-bottom {
             position: fixed;
-            bottom: 20px;
             right: 20px;
             width: 60px;
             height: 60px;
-            background-color: #6366f1;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
             border-radius: 50%;
             border: none;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             z-index: 1000;
-            /* Ensure it's on top */
         }
 
-        /* Hover effect */
+        /* Go to Top */
+        .scroll-top {
+            bottom: 90px;
+            background-color: #10b981;
+        }
+
+        .scroll-top:hover {
+            background-color: #059669;
+            transform: scale(1.1);
+        }
+
+        .scroll-top:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5);
+        }
+
+        .scroll-top::before {
+            content: "⬆";
+            font-size: 30px;
+        }
+
+        /* Go to Bottom */
+        .scroll-bottom {
+            bottom: 20px;
+            background-color: #6366f1;
+        }
+
         .scroll-bottom:hover {
             background-color: #4f46e5;
-            /* Slightly darker on hover */
             transform: scale(1.1);
-            /* Slightly enlarge the button */
         }
 
-        /* Focus effect for accessibility */
         .scroll-bottom:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
-            /* Focus outline */
         }
 
-        /* Icon styling */
         .scroll-bottom::before {
             content: "⬇";
-            /* Unicode down arrow */
             font-size: 30px;
-            transition: transform 0.3s ease;
         }
 
 
@@ -443,13 +460,23 @@
 
 
         <!-- link to the next lesson -->
-        <a href="lesson-4-lists-comments-clean-structure.html" class="fancy-link">Lesson 4: Lists, Comments & Clean Structure</a>
+        <a href="lesson-4-lists-comments-clean-structure.html" class="fancy-link">Lesson 4: Lists, Comments & Clean
+            Structure</a>
 
-        <!-- Floating "Go to Bottom" Button -->
-        <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
-        </button>
+        <!-- Go to Top Button -->
+        <button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to Top"></button>
+
+        <!-- Go to Bottom Button -->
+        <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom"></button>
 
         <script>
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+
             function scrollToBottom() {
                 window.scrollTo({
                     top: document.body.scrollHeight,
@@ -457,6 +484,7 @@
                 });
             }
         </script>
+
     </main>
 
 </body>

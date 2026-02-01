@@ -144,51 +144,7 @@
       text-align: center;
     }
 
-    /* .fancy-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  position: relative;
-}
-
-.fancy-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  left: 0;
-  bottom: -5px;
-  background: linear-gradient(90deg, #ff0055, #ffdd00);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.fancy-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-} */
-
-    /* Fancy Link - Neon glowing link */
-
-    /* .fancy-link {
-  color: #0ff;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow:
-    0 0 5px #0ff,
-    0 0 10px #0ff,
-    0 0 20px #0ff;
-  transition: text-shadow 0.3s ease;
-}
-
-.fancy-link:hover {
-  text-shadow:
-    0 0 10px #0ff,
-    0 0 20px #0ff,
-    0 0 30px #0ff,
-    0 0 40px #0ff;
-} */
+   
 
     /* Fancy Link - Background highlight animation */
 
@@ -209,116 +165,69 @@
     }
 
 
-    /* Fancy Link - Underline bounce effect */
-    /* .fancy-link {
-  text-decoration: none;
-  color: #ff0055;
+   /* Shared button styles */
+.scroll-top,
+.scroll-bottom {
+  position: fixed;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
   font-weight: bold;
-  position: relative;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
-.fancy-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  background: #ff0055;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  transform-origin: bottom right;
+/* Go to Top */
+.scroll-top {
+  bottom: 90px;
+  background-color: #10b981;
 }
 
-.fancy-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-} */
-    /* First scroll */
-    /* .scroll-bottom {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 14px;
-      font-size: 18px;
-      cursor: pointer;
-    } */
+.scroll-top:hover {
+  background-color: #059669;
+  transform: scale(1.1);
+}
 
+.scroll-top:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5);
+}
 
-    /* Floating "Go to Bottom" Button */
-    .scroll-bottom {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background-color: #6366f1;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      border-radius: 50%;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      z-index: 1000;
-      /* Ensure it's on top */
-    }
+.scroll-top::before {
+  content: "⬆";
+  font-size: 30px;
+}
 
-    /* Hover effect */
-    .scroll-bottom:hover {
-      background-color: #4f46e5;
-      /* Slightly darker on hover */
-      transform: scale(1.1);
-      /* Slightly enlarge the button */
-    }
+/* Go to Bottom */
+.scroll-bottom {
+  bottom: 20px;
+  background-color: #6366f1;
+}
 
-    /* Focus effect for accessibility */
-    .scroll-bottom:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
-      /* Focus outline */
-    }
+.scroll-bottom:hover {
+  background-color: #4f46e5;
+  transform: scale(1.1);
+}
 
-    /* Icon styling */
-    .scroll-bottom::before {
-      content: "⬇";
-      /* Unicode down arrow */
-      font-size: 30px;
-      transition: transform 0.3s ease;
-    }
+.scroll-bottom:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+}
 
+.scroll-bottom::before {
+  content: "⬇";
+  font-size: 30px;
+}
 
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      .lesson-header h1 {
-        font-size: 1.8rem;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      .card h2 {
-        font-size: 1.4rem;
-        /* Adjust h2 size on mobile */
-      }
-
-      .card h3 {
-        font-size: 1rem;
-        /* Adjust h3 size on mobile */
-      }
-
-      .scroll-bottom {
-        width: 70px;
-        height: 70px;
-        font-size: 32px;
-        /* Larger icon on mobile */
-      }
-    }
   </style>
 </head>
 
@@ -474,30 +383,27 @@
 
     <a href="lesson-2-text-and-headings.html" class="fancy-link">Next up 👉 Lesson 2: Text & Headings</a>
 
-    <!-- Floating “go to bottom” button (modern UX) -->
-    <!-- <SECtion>
-            <button class="scroll-bottom" onclick="scrollToBottom()">⬇</button>
-        <script>
-            function scrollToBottom() {
-                window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: "smooth"
-                });
-            }
-        </script>
-        </SECtion> -->
-    <!-- Floating "Go to Bottom" Button -->
-    <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
-    </button>
+    <!-- Go to Top Button -->
+<button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to Top"></button>
 
-    <script>
-      function scrollToBottom() {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth"
-        });
-      }
-    </script>
+<!-- Go to Bottom Button -->
+<button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom"></button>
+
+<script>
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  }
+</script>
 
   </main>
 
