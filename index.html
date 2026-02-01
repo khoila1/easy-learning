@@ -130,6 +130,7 @@
       color: #334155;
     }
 
+
     /* ===== Dividers ===== */
     hr {
       border: none;
@@ -144,7 +145,69 @@
       text-align: center;
     }
 
-   
+
+
+    /* ===== Motivation Section Styling ===== */
+    .motivation {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+      border-radius: 20px;
+      margin: 60px auto;
+      max-width: 900px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      font-family: system-ui, sans-serif;
+    }
+
+    .motivation h2 {
+      font-size: 2rem;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Line styling */
+    .motivation-line {
+      font-size: 1.5rem;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+      opacity: 0;
+    }
+
+    /* Fancy animation for each line */
+    @keyframes fadeBounceGlow {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+        text-shadow: 0 0 0px #fff;
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.05);
+        text-shadow: 0 0 15px #fff, 0 0 25px #fff;
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+      }
+    }
+
+    .motivation-line.show {
+      animation: fadeBounceGlow 1s ease forwards;
+    }
+
+
+
+
+
+
+
 
     /* Fancy Link - Background highlight animation */
 
@@ -165,69 +228,68 @@
     }
 
 
-   /* Shared button styles */
-.scroll-top,
-.scroll-bottom {
-  position: fixed;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
+    /* Shared button styles */
+    .scroll-top,
+    .scroll-bottom {
+      position: fixed;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
 
-/* Go to Top */
-.scroll-top {
-  bottom: 90px;
-  background-color: #10b981;
-}
+    /* Go to Top */
+    .scroll-top {
+      bottom: 90px;
+      background-color: #10b981;
+    }
 
-.scroll-top:hover {
-  background-color: #059669;
-  transform: scale(1.1);
-}
+    .scroll-top:hover {
+      background-color: #059669;
+      transform: scale(1.1);
+    }
 
-.scroll-top:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5);
-}
+    .scroll-top:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5);
+    }
 
-.scroll-top::before {
-  content: "⬆";
-  font-size: 30px;
-}
+    .scroll-top::before {
+      content: "⬆";
+      font-size: 30px;
+    }
 
-/* Go to Bottom */
-.scroll-bottom {
-  bottom: 20px;
-  background-color: #6366f1;
-}
+    /* Go to Bottom */
+    .scroll-bottom {
+      bottom: 20px;
+      background-color: #6366f1;
+    }
 
-.scroll-bottom:hover {
-  background-color: #4f46e5;
-  transform: scale(1.1);
-}
+    .scroll-bottom:hover {
+      background-color: #4f46e5;
+      transform: scale(1.1);
+    }
 
-.scroll-bottom:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
-}
+    .scroll-bottom:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+    }
 
-.scroll-bottom::before {
-  content: "⬇";
-  font-size: 30px;
-}
-
+    .scroll-bottom::before {
+      content: "⬇";
+      font-size: 30px;
+    }
   </style>
 </head>
 
@@ -384,26 +446,80 @@
     <a href="lesson-2-text-and-headings.html" class="fancy-link">Next up 👉 Lesson 2: Text & Headings</a>
 
     <!-- Go to Top Button -->
-<button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to Top"></button>
+    <button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to Top"></button>
 
-<!-- Go to Bottom Button -->
-<button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom"></button>
+    <!-- Go to Bottom Button -->
+    <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom"></button>
 
-<script>
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
 
-  function scrollToBottom() {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth"
-    });
-  }
-</script>
+      function scrollToBottom() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    </script>
+
+    <!-- Motivational Section -->
+    <section class="motivation">
+      <h2>💡 Stay Inspired as a Web Developer!</h2>
+      <div class="motivation-line" id="motivation-line"></div>
+    </section>
+
+    <script>
+      const motivationalLines = [
+        "আপনি যে প্রতিটি কোড লিখেন, তা আপনার স্বপ্নের দিকে এক ধাপ এগিয়ে নিয়ে যায়।",
+        "ভুলগুলো ব্যর্থতা নয়—এগুলো আপনার সবচেয়ে দ্রুততম শিক্ষক।",
+        "আজ যে ওয়েবটি কল্পনা করছেন, তা আগামীকাল তৈরি করা যায়।",
+        "অনুশীলন চালিয়ে যান; ছোট দৈনিক অগ্রগতি শেষ পর্যন্ত দক্ষতায় পরিণত হয়।",
+        "ডিবাগিং প্রমাণ করে যে আপনি মানের প্রতি যত্নশীল।",
+        "HTML, CSS এবং JS শেখা মানে নিজেকে সুপার পাওয়ার অনলক করা।",
+        "প্রজেক্ট তৈরি করুন, যতই ছোট হোক না কেন—এগুলো আপনার বৃদ্ধি দেখায়।",
+        "আপনার প্রথম ওয়েবসাইটটি হয়তো বিশৃঙ্খল হবে, কিন্তু পরবর্তীটি ঝকঝকে হবে।",
+        "কৌতূহল এবং ধৈর্য আপনাকে কেবল প্রতিভার চেয়ে আরও দূরে নিয়ে যাবে।",
+        "একদিন কেউ আপনার পোর্টফোলিও দেখবে এবং বলবে: 'আমি চাই এটা তাদের দ্বারা তৈরি হোক!'"
+      ];
+
+      let index = 0;
+      const lineContainer = document.getElementById("motivation-line");
+
+      function showNextLine() {
+        if (index < motivationalLines.length) {
+          lineContainer.textContent = motivationalLines[index];
+          lineContainer.classList.remove("show");
+          void lineContainer.offsetWidth; // trigger reflow for restart animation
+          lineContainer.classList.add("show");
+          index++;
+          setTimeout(showNextLine, 2500); // show next line after 2.5s
+        }
+      }
+
+      // Start animation when section enters viewport
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight - 100;
+      }
+
+      function animateMotivation() {
+        if (isInViewport(lineContainer)) {
+          showNextLine();
+          window.removeEventListener('scroll', animateMotivation);
+        }
+      }
+
+      window.addEventListener('scroll', animateMotivation);
+      window.addEventListener('load', animateMotivation);
+    </script>
+
+
+
 
   </main>
 
