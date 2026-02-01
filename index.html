@@ -147,6 +147,7 @@
 
 
 
+
     /* ===== Motivation Section Styling ===== */
     .motivation {
       background: linear-gradient(135deg, #6366f1, #4f46e5);
@@ -173,34 +174,39 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+      font-weight: bold;
       opacity: 0;
+      transition: color 0.3s ease;
     }
 
-    /* Fancy animation for each line */
-    @keyframes fadeBounceGlow {
+    /* Bounce + Color Pulse Animation */
+    @keyframes bouncePulse {
       0% {
         opacity: 0;
         transform: translateY(50px) scale(0.8);
-        text-shadow: 0 0 0px #fff;
+        color: #fff;
+        text-shadow: 0 0 5px #fff;
       }
 
       50% {
         opacity: 1;
-        transform: translateY(-10px) scale(1.05);
-        text-shadow: 0 0 15px #fff, 0 0 25px #fff;
+        transform: translateY(-15px) scale(1.1);
+        color: #ffec4d;
+        text-shadow: 0 0 20px #ffec4d, 0 0 40px #ffec4d;
       }
 
       100% {
         opacity: 1;
         transform: translateY(0) scale(1);
+        color: #fff;
         text-shadow: 0 0 10px #fff, 0 0 20px #fff;
       }
     }
 
     .motivation-line.show {
-      animation: fadeBounceGlow 1s ease forwards;
+      animation: bouncePulse 1s ease forwards;
     }
+
 
 
 
@@ -467,7 +473,7 @@
       }
     </script>
 
-    <!-- Motivational Section -->
+
     <section class="motivation">
       <h2>💡 Stay Inspired as a Web Developer!</h2>
       <div class="motivation-line" id="motivation-line"></div>
@@ -487,38 +493,25 @@
         "একদিন কেউ আপনার পোর্টফোলিও দেখবে এবং বলবে: 'আমি চাই এটা তাদের দ্বারা তৈরি হোক!'"
       ];
 
-      let index = 0;
       const lineContainer = document.getElementById("motivation-line");
 
-      function showNextLine() {
-        if (index < motivationalLines.length) {
-          lineContainer.textContent = motivationalLines[index];
-          lineContainer.classList.remove("show");
-          void lineContainer.offsetWidth; // trigger reflow for restart animation
-          lineContainer.classList.add("show");
-          index++;
-          setTimeout(showNextLine, 2500); // show next line after 2.5s
-        }
+      function showRandomLine() {
+        // Pick a random index
+        const randomIndex = Math.floor(Math.random() * motivationalLines.length);
+        lineContainer.textContent = motivationalLines[randomIndex];
+
+        // Restart animation
+        lineContainer.classList.remove("show");
+        void lineContainer.offsetWidth; // Trigger reflow
+        lineContainer.classList.add("show");
+
+        // Show next line after 2.5 seconds
+        setTimeout(showRandomLine, 2500);
       }
 
-      // Start animation when section enters viewport
-      function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight - 100;
-      }
-
-      function animateMotivation() {
-        if (isInViewport(lineContainer)) {
-          showNextLine();
-          window.removeEventListener('scroll', animateMotivation);
-        }
-      }
-
-      window.addEventListener('scroll', animateMotivation);
-      window.addEventListener('load', animateMotivation);
+      // Start looping animation
+      window.addEventListener('load', showRandomLine);
     </script>
-
-
 
 
   </main>
