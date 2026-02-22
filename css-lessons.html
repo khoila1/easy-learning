@@ -176,6 +176,18 @@
             content: "⬇";
             font-size: 30px;
         }
+
+        .lesson h1 {
+            position: sticky;
+            top: 0;
+            background: #f5f7fb;
+            padding: 12px 0;
+            z-index: 50;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
 
@@ -3108,30 +3120,30 @@ body {
 
 
 
-<div class="lesson">
+    <div class="lesson">
 
-  <h1>CSS — পাঠ ২২</h1>
-  <p class="intro">
-    আজ আমরা শিখব <strong>Z-index & Layering</strong> 😎🔥  
-    যখন দুইটা element একটার উপর আরেকটা চলে আসে — তখন কে উপরে থাকবে?
-  </p>
+        <h1>CSS — পাঠ ২২</h1>
+        <p class="intro">
+            আজ আমরা শিখব <strong>Z-index & Layering</strong> 😎🔥
+            যখন দুইটা element একটার উপর আরেকটা চলে আসে — তখন কে উপরে থাকবে?
+        </p>
 
-  <div class="card">
-    <h2>Z-index কী?</h2>
-    <p>
-      <strong>z-index</strong> দিয়ে আমরা ঠিক করি  
-      কোন element সামনে থাকবে আর কোনটা পিছনে থাকবে।
-    </p>
-    <p>
-      ⚠️ মনে রাখবে: z-index কাজ করতে হলে element-এর <strong>position</strong> থাকতে হবে  
-      (relative / absolute / fixed)
-    </p>
-  </div>
+        <div class="card">
+            <h2>Z-index কী?</h2>
+            <p>
+                <strong>z-index</strong> দিয়ে আমরা ঠিক করি
+                কোন element সামনে থাকবে আর কোনটা পিছনে থাকবে।
+            </p>
+            <p>
+                ⚠️ মনে রাখবে: z-index কাজ করতে হলে element-এর <strong>position</strong> থাকতে হবে
+                (relative / absolute / fixed)
+            </p>
+        </div>
 
-  <div class="card">
-    <h2>সহজ উদাহরণ</h2>
+        <div class="card">
+            <h2>সহজ উদাহরণ</h2>
 
-<pre><code>.box1 {
+            <pre><code>.box1 {
   position: absolute;
   background: red;
   z-index: 1;
@@ -3143,16 +3155,16 @@ body {
   z-index: 2;
 }</code></pre>
 
-    <p>
-      ➡️ z-index বেশি হলে element উপরে থাকবে  
-      ➡️ এখানে নীল box লালের উপরে থাকবে
-    </p>
-  </div>
+            <p>
+                ➡️ z-index বেশি হলে element উপরে থাকবে
+                ➡️ এখানে নীল box লালের উপরে থাকবে
+            </p>
+        </div>
 
-  <div class="card">
-    <h2>সম্পূর্ণ উদাহরণ</h2>
+        <div class="card">
+            <h2>সম্পূর্ণ উদাহরণ</h2>
 
-<pre><code>&lt;!DOCTYPE html&gt;
+            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;style&gt;
@@ -3187,44 +3199,44 @@ body {
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-  </div>
+        </div>
 
-  <div class="card">
-    <h2>কি হবে?</h2>
-    <ul>
-      <li>দুইটা box একটার উপর আরেকটা আসবে</li>
-      <li>নীল box উপরে থাকবে</li>
-      <li>z-index বদলালে অবস্থান বদলাবে</li>
-    </ul>
-  </div>
+        <div class="card">
+            <h2>কি হবে?</h2>
+            <ul>
+                <li>দুইটা box একটার উপর আরেকটা আসবে</li>
+                <li>নীল box উপরে থাকবে</li>
+                <li>z-index বদলালে অবস্থান বদলাবে</li>
+            </ul>
+        </div>
 
-  <div class="card callout">
-    <h2>নতুন শব্দ 🧠</h2>
-    <ul>
-      <li>z-index → লেয়ার নিয়ন্ত্রণ</li>
-      <li>Layer → উপরে-নিচে স্তর</li>
-      <li>Stacking → একটার উপর আরেকটা বসা</li>
-    </ul>
-  </div>
+        <div class="card callout">
+            <h2>নতুন শব্দ 🧠</h2>
+            <ul>
+                <li>z-index → লেয়ার নিয়ন্ত্রণ</li>
+                <li>Layer → উপরে-নিচে স্তর</li>
+                <li>Stacking → একটার উপর আরেকটা বসা</li>
+            </ul>
+        </div>
 
-  <div class="card callout">
-    <h2>Mini Challenge 🎯</h2>
-    <ul>
-      <li>তিনটা box বানাও</li>
-      <li>একটার z-index 5 দাও</li>
-      <li>একটা box নিচে রাখতে z-index কমাও</li>
-    </ul>
-  </div>
+        <div class="card callout">
+            <h2>Mini Challenge 🎯</h2>
+            <ul>
+                <li>তিনটা box বানাও</li>
+                <li>একটার z-index 5 দাও</li>
+                <li>একটা box নিচে রাখতে z-index কমাও</li>
+            </ul>
+        </div>
 
-  <div class="card callout">
-    <h2>পরবর্তী পাঠ 🚀</h2>
-    <p>
-      <strong>পাঠ ২৩</strong><br>
-      CSS Flexbox — Powerful Layout System 🔥
-    </p>
-  </div>
+        <div class="card callout">
+            <h2>পরবর্তী পাঠ 🚀</h2>
+            <p>
+                <strong>পাঠ ২৩</strong><br>
+                CSS Flexbox — Powerful Layout System 🔥
+            </p>
+        </div>
 
-</div>
+    </div>
 
 
 

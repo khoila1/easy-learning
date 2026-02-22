@@ -1,0 +1,98 @@
+You want **each `<h1>` to stay visible step‑by‑step while scrolling**, almost like a **sticky chapter header** that updates as you move down the page.  
+That’s a great UX pattern — clean, modern, and perfect for long lessons.
+
+And yes, you can do it beautifully with **pure CSS**, no JavaScript required.
+
+Below is the polished solution, plus Guided Links so you can explore enhancements like sticky animations or section reveal effects.
+
+---
+
+# ⭐ Make all `<h1>` headings “stick” as you scroll  
+This effect is called **CSS sticky headings**.
+
+### ✅ Add this to your CSS
+```css
+.lesson h1 {
+  position: sticky;
+  top: 0;
+  background: #f5f7fb;
+  padding: 12px 0;
+  z-index: 50;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+```
+
+### ✔ What this does  
+- Each `<h1>` becomes a **sticky header**  
+- When you scroll into a new section, the next `<h1>` **replaces** the previous one  
+- It feels like a step‑by‑step guide  
+- Works perfectly with your `.lesson` layout  
+- No JavaScript needed  
+
+---
+
+# ⭐ Optional: Add a smooth fade‑in when each `<h1>` becomes sticky  
+If you want a more modern feel:
+
+```css
+.lesson h1 {
+  position: sticky;
+  top: 0;
+  background: #f5f7fb;
+  padding: 12px 0;
+  z-index: 50;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease;
+}
+```
+
+This gives a subtle **glass-like blur** as the heading sticks.
+
+Explore more with glassmorphism.
+
+---
+
+# ⭐ Optional: Add a shadow when the heading is stuck  
+This makes it feel more “layered”:
+
+```css
+.lesson h1 {
+  position: sticky;
+  top: 0;
+  background: #f5f7fb;
+  padding: 12px 0;
+  z-index: 50;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+```
+
+---
+
+# ⭐ Important note  
+Sticky headings work best when:
+
+- Each `<h1>` is inside its own `.card` or section  
+- There is enough vertical space between sections  
+- The parent container (`.lesson`) does **not** have `overflow: hidden`
+
+Your current layout is perfect for this.
+
+---
+
+# ⭐ If you want something even cooler  
+I can also help you create:
+
+- Scroll‑activated progress bar  
+- Animated section markers  
+- Reveal‑on‑scroll effects  
+- Sticky sidebar navigation
+
+Just tell me the vibe you want for your lesson pages.
