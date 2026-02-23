@@ -1,0 +1,200 @@
+<style>
+        /* ===== Base Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .baloo-da-2 {
+            font-family: "Baloo Da 2", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+
+
+        /* ===== Body ===== */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== Main Lesson Wrapper ===== */
+        .lesson {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        /* ===== Headings ===== */
+        .lesson h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .lesson .intro {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        /* ===== Card Design ===== */
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ===== Callout Card ===== */
+        .card.callout {
+            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+            border-left: 6px solid #6366f1;
+        }
+
+        /* ===== Lists ===== */
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        /* ===== Code Block ===== */
+        pre {
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        code {
+            font-family: "JetBrains Mono", Consolas, monospace;
+        }
+
+        pre code {
+            color: #e5e7eb;
+            background: #0f172a;
+            /* color: #3730a3; */
+            /* font-family: "JetBrains Mono", Consolas, monospace; */
+            font-size: 0.95rem;
+        }
+
+        /* ===== Inline Code ===== */
+        code {
+            background: #eef2ff;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+
+
+
+
+        /* ⭐ Modern + Responsive Scroll Buttons (Desktop + Mobile)
+✅ Updated CSS (full replacement) */
+
+        /* Shared modern FAB style */
+        .scroll-top,
+        .scroll-bottom {
+            position: fixed;
+            right: 20px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            font-size: 22px;
+
+            cursor: pointer;
+            z-index: 1000;
+
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+        }
+
+        /* Hover (desktop only) */
+        @media (hover: hover) {
+
+            .scroll-top:hover,
+            .scroll-bottom:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+            }
+        }
+
+        /* Press effect */
+        .scroll-top:active,
+        .scroll-bottom:active {
+            transform: scale(0.92);
+        }
+
+        /* Top button */
+        .scroll-top {
+            bottom: 90px;
+        }
+
+        .scroll-top::before {
+            content: "▲";
+        }
+
+        /* Bottom button */
+        .scroll-bottom {
+            bottom: 20px;
+        }
+
+        .scroll-bottom::before {
+            content: "▼";
+        }
+
+        /* ⭐ Mobile Optimization */
+        @media (max-width: 600px) {
+
+            .scroll-top,
+            .scroll-bottom {
+                width: 46px;
+                height: 46px;
+                font-size: 18px;
+                right: 14px;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            }
+
+            .scroll-top {
+                bottom: 80px;
+            }
+
+            .scroll-bottom {
+                bottom: 18px;
+            }
+        }
+
+
+
+        .lesson h1 {
+            position: sticky;
+            top: 0;
+            background: #e7e9ed;
+            padding: 12px 0;
+            z-index: 50;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+    </style>
